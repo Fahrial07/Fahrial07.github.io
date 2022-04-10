@@ -23,24 +23,23 @@
         document.getElementById("soal1").innerHTML = soalX;
         document.getElementById("soal2").innerHTML = soalY;
     }
-
-    //function countdown
-    function countDown() {
-    if(time > 0) {
-        document.getElementById("time").innerHTML = time;
-    } else if(time <= 0) {
-        alert("Game Over!" + " Score Kamu : " + document.getElementById("score").innerHTML);
-        window.location='../index.html';
+            //function countdown
+        function countDown() {
+        if(time > 0) {
+            document.getElementById("time").innerHTML = time;
+        } else if(time <= 0) {
+            alert("Game Over!" + " Score Kamu : " + document.getElementById("score").innerHTML);
+            window.location='../index.html';
+            return;
+        }
+        time -= 1;
+        setTimeout("countDown()",1000);
         return;
-    }
-    time -= 1;
-    setTimeout("countDown()",1000);
-    return;
-    }
-
+        }
 
     $('#form-name').submit(function()
     {
+
         $("#cardName").attr("hidden","1");
         $("#soal").removeAttr('hidden');
         //ambil data nama

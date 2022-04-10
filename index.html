@@ -10,7 +10,8 @@
     <title>MathGames</title>
 </head>
 
-<body class="bg-primary">
+<body style="background:url('assets/images/bg.jpg'); background-repeat: no-repeat;
+    background-size: cover;">
     <header>
         <nav class="navbar navbar-light bg-dark">
             <div class="container-fluid">
@@ -20,13 +21,13 @@
     </header>
     <div class="container">
         <div class="judul mt-4">
-            <h1 class="text-center text-white">
-                <b>Let's Play Math Games!</b>
+            <h1 class="text-center text-warning">
+                <b id="text"></b>
             </h1>
         </div>
         <div class="row justify-content-center p-5">
             <div class="col-lg-8">
-                <div class="card">
+                <div class="card bg-transparent">
                     <div class="card-body">
                         <div class="container">
                             <div class="row d-flex justify-content-evenly">
@@ -61,6 +62,20 @@
     </div>
     <script src="assets/js/jQuery.js"></script>
     <script src="assets/bootstrap/bootstrap.min.js"></script>
+    <script>
+        var i = 0,
+            text;
+        text = "Let's Play Math Games!"
+
+        function ketik() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++
+                setTimeout(ketik, 100)
+            }
+        }
+        ketik();
+    </script>
 </body>
 
 </html>
